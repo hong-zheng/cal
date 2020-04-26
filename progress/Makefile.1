@@ -1,0 +1,18 @@
+#我的第一个makefile
+# $@ 目标
+# $^ 所有依赖文件
+# $< 第一个依赖文件
+
+main : main.o add.o sub.o mul.o parse.o
+	gcc -o $@ $^
+
+main.o : main.c
+	gcc -c $< -o $@
+add.o : add.c
+	gcc -c $< -o $@
+sub.o : sub.c
+	gcc -c $< -o $@
+mul.o : mul.c
+	gcc -c $< -o $@
+parse.o : parse.c
+	gcc -c $< -o $@
